@@ -6,3 +6,5 @@ openssl aes-256-cbc -K $encrypted_f68595d96691_key -iv $encrypted_f68595d96691_i
 rm deploy-key.enc # Don't need it anymore
 chmod 600 deploy-key
 mv deploy-key ~/.ssh/id_rsa
+npm install bower
+bower install
