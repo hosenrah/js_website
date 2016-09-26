@@ -4,7 +4,7 @@ node_js:
 env:
   global: 
 addons:
-  ssh_known_hosts: kjaermaxi.me
+  ssh_known_hosts: s493274694.online.de
 before_install:
   - bash _scripts/install.sh
 after_success:
