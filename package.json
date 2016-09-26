@@ -1,0 +1,27 @@
+{
+  "name": "js_website",
+  "version": "0.0.1",
+  "description": "This is the website of the famous Just Shred crew",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hosenrah/js_website.git"
+  },
+  "keywords": [
+    "js_website"
+  ],
+  "author": "Andreas Rau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hosenrah/js_website/issues"
+  },
+  "homepage": "https://github.com/hosenrah/js_website#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}

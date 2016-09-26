@@ -1,0 +1,1 @@
+var js_website = angular.module('js_website', ['ngRoute', 'ngResource']);

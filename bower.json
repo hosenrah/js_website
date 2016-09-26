@@ -1,0 +1,24 @@
+{
+  "name": "js_website",
+  "description": "This is the website of the famous Just Shred crew",
+  "main": "index.js",
+  "authors": [
+    "Andreas Rau"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "js_website"
+  ],
+  "homepage": "https://github.com/hosenrah/js_website",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.0"
+  }
+}
