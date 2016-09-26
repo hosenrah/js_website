@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ convertToDate({ dt: post.created_time }) | date: dateFormat }}</h3>
+    </div>
+    <div class="panel-body">
+        <img src={{post.images.low_resolution.url}}>
+        <p>{{post.caption.text}}</p>
+    </div>
+</div>
