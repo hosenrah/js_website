@@ -2,7 +2,5 @@
     <a href="#/">Back to Home</a>
 </p>
 <div ng-repeat="p in instagramFeed.data">
-    <div class="col-md-4">
-        <instagram-post post="p" convert-to-date="convertToDate(dt)" date-format="MMMM d, y"></instagram-post>
-    </div>
+    <div class="square" ng-style="{'background-image':'url({{p.images.standard_resolution.url}})'}"></div>
 </div>
