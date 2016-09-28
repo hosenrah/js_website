@@ -1,6 +1,8 @@
 <p>
     <a href="#/">Back to Home</a>
 </p>
-<div ng-repeat="p in instagramFeed.data">
-    <div class="square" ng-style="{'background-image':'url({{p.images.standard_resolution.url}})'}"></div>
+<div class="col-md-8 col-md-offset-2">
+    <div ng-repeat="p in instagramFeed.data">
+        <div class="square" ng-style="{'background-image':'url({{p.images.standard_resolution.url}})'}"></div>
+    </div>
 </div>
