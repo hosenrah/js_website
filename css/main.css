@@ -1,18 +1,17 @@
 .square {
-    float:left;
-    position: relative;
-    width: 30%;
-    padding-bottom : 30%;
-    margin:1.66%;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover;
-}
-
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 body {
-    font-size:20px;
-    color: #fff;
-    text-align:center;
-    background:#ECECEC;
-}
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #ECECEC;
+  min-width: 480px;
+  width: auto !important; }
