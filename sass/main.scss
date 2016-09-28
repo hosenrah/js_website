@@ -1,0 +1,50 @@
+@import "bower_components/susy/sass/susy";
+
+$susy: (
+    columns: 9,
+    debug: (image: show)
+);
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin-top: 0;
+    height: 100vh;
+    @include container(1140px);
+}
+
+.main {
+    height: 80vh;
+    
+    .navbar {
+        height: 5vh;
+    }
+
+    .content {
+        height: 75vh;
+        background-color: rgba(100, 0, 0, 0.6);
+    }
+    
+    .post {
+        height: 24vh;
+        overflow: hidden;
+        @include span(3 of 9);
+
+        &:nth-child(5n) {
+            @include last;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+.footer {
+    height: 20vh;
+    background-color: rgba(0, 30, 100, 0.6);
+    clear: both;
+}
