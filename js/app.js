@@ -11,13 +11,6 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
     
     vimeoFactory.getVideosFromUser({
         user:"jstshrd",
-//        per_page:"<ITEMS_PER_PAGE>", // (optional) valid values: 1-50 | default: 25
-//        page:"<PAGE_NUMBER>", // (optional)
-//        query:"<QUERY>", // (optional)
-//        filter:"<FILTER>", // (optional)
-//        filter_embeddable:"<FILTER_EMBEDDABLE>", // (optional)
-//        sort:"<SORT>", // (optional)
-//        direction:"<DIRECTION>", // (optional)
         access_token:"1bb5838a1c16bdab1e8eac3add1b6f2a"
     }).then(function(_data){
         $scope.vimeoFeedContainer = _data.data.data;
@@ -35,7 +28,6 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
         $scope.length = $scope.vimeoFeedContainer.length;
         
         for(i = 0; i < $scope.length; i++) {
-            console.log(i);
             if($scope.vimeoFeedContainer[i].name.charAt(0) === "#") {
                 $scope.vimeoFeed.push($scope.vimeoFeedContainer[i]);
             }
