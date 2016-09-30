@@ -45,23 +45,26 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
     $scope.getMainVimeoVideo = function() {
         if($scope.mainVimeoVideo) {
             var videoHash = $scope.mainVimeoVideo.slice(8);
-            return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?api=1&player_id=player1&badge=0&autopause=0&autoplay=1&loop=1');
+            return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?api=1&player_id=mainVimeoVideo&badge=0&loop=1');
         }
     };
     
     $scope.getIframeSrc = function(src) {
         var videoHash = src.slice(8);
-        return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?badge=0&autopause=0&player_id=0');
+        return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?badge=0&autopause=1&player_id=0');
     };
     
+    
+//    have a look at https://github.com/vimeo/player.js
     jQuery(document).ready(function() {
-        // Enable the API on each Vimeo video
-        jQuery('iframe.vimeo').each(function(){
-            Froogaloop(this).addEvent('ready', ready);
-        });
+       
+        var mainVimeoVideoIframe = document.getElementById('mainVimeoVideo');
+        
+        Froogaloop(mainVimeoVideoIframe).addEvent('ready', ready);
 
         function ready(playerID){
             Froogaloop(playerID).api('setVolume', 0);
+            Froogaloop(playerID).api("play");
         };
     });
 
