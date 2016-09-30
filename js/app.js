@@ -20,7 +20,10 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
     });
     
     $scope.SkipValidation = function(value) {
-      return $sce.trustAsHtml(value);
+        var n = value.search("player_id=0");
+        var vimeoIframe = value.slice(0, n) + 'autoplay=1&loop=1&' + value.slice(n);
+        
+        return $sce.trustAsHtml(vimeoIframe);
     };
     
     $scope.filterVimeoFeed = function() {
@@ -34,7 +37,17 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
         }
     };
     
-    
+    $scope.getIframeSrc = function(src) {
+        var videoHash = src.slice(8);
+        return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?badge=0&autopause=0&player_id=0&autoplay=1&loop=1');
+    };
+    angular.element(document).ready(function () {
+        var iframe = document.getElementsByTagName('iframe');
+            var length = iframe.length;
+            console.log(length);
+            iframe.contentWindow.postMessage('{"method":"setVolume", "value":0}','*');
+    });
+
 }]);
 
 js_website.controller('instagramController', ['$scope', '$resource', function($scope, $resource) {

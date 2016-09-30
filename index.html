@@ -13,7 +13,7 @@
         <script type="application/javascript" src="node_modules/angular/angular.min.js"></script>
         <script type="application/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
         <script type="application/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
-        <script src="node_modules/angular-vimeo-api-factory/dist/angular-vimeo-api-factory.min.js"></script>
+        <script type="application/javascript" src="node_modules/angular-vimeo-api-factory/dist/angular-vimeo-api-factory.min.js"></script>
         <script type="application/javascript" src="js/app.js"></script>
     </head>
     <body>
@@ -36,9 +36,11 @@
         <div class="container-full">
             
             <div ng-controller="vimeoController">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12 no-padding">
                     <div ng-repeat="p in vimeoFeed">
-                        <div class="embed-responsive embed-responsive-16by9" ng-bind-html="SkipValidation(p.embed.html)"></div>
+                        <div class="embed-responsive embed-responsive-16by9" ng-class="{titleVimeoVideo:$first}">
+                            <iframe src="{{getIframeSrc(p.uri)}}" width="1920" height="1080" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -54,6 +54,22 @@ body {
   background: #1c1c26;
   white-space: nowrap; }
 
+.titleVimeoVideo iframe {
+  filter: blur(3px); }
+
+.titleVimeoVideo:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../img/js_logo/js_logo_white.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+
 .container-full {
   margin: 0 auto;
   width: 100%; }
