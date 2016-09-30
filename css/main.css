@@ -54,10 +54,7 @@ body {
   background: #1c1c26;
   white-space: nowrap; }
 
-.titleVimeoVideo iframe {
-  filter: blur(3px); }
-
-.titleVimeoVideo:after {
+.mainVimeoVideo:after {
   content: '\A';
   position: absolute;
   width: 100%;

@@ -9,6 +9,8 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
     
     $scope.vimeoFeed = [];
     
+    $scope.mainVimeoVideo;
+    
     vimeoFactory.getVideosFromUser({
         user:"jstshrd",
         access_token:"1bb5838a1c16bdab1e8eac3add1b6f2a"
@@ -31,21 +33,36 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
         $scope.length = $scope.vimeoFeedContainer.length;
         
         for(i = 0; i < $scope.length; i++) {
+            if($scope.vimeoFeedContainer[i].link.includes('main')) {
+                $scope.mainVimeoVideo = $scope.vimeoFeedContainer[i].uri;
+            }
             if($scope.vimeoFeedContainer[i].name.charAt(0) === "#") {
                 $scope.vimeoFeed.push($scope.vimeoFeedContainer[i]);
             }
         }
     };
     
+    $scope.getMainVimeoVideo = function() {
+        if($scope.mainVimeoVideo) {
+            var videoHash = $scope.mainVimeoVideo.slice(8);
+            return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?api=1&player_id=player1&badge=0&autopause=0&autoplay=1&loop=1');
+        }
+    };
+    
     $scope.getIframeSrc = function(src) {
         var videoHash = src.slice(8);
-        return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?badge=0&autopause=0&player_id=0&autoplay=1&loop=1');
+        return $sce.trustAsResourceUrl('https://player.vimeo.com/video/' + videoHash + '?badge=0&autopause=0&player_id=0');
     };
-    angular.element(document).ready(function () {
-        var iframe = document.getElementsByTagName('iframe');
-            var length = iframe.length;
-            console.log(length);
-            iframe.contentWindow.postMessage('{"method":"setVolume", "value":0}','*');
+    
+    jQuery(document).ready(function() {
+        // Enable the API on each Vimeo video
+        jQuery('iframe.vimeo').each(function(){
+            Froogaloop(this).addEvent('ready', ready);
+        });
+
+        function ready(playerID){
+            Froogaloop(playerID).api('setVolume', 0);
+        };
     });
 
 }]);

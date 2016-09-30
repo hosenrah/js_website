@@ -14,6 +14,8 @@
         <script type="application/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
         <script type="application/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
         <script type="application/javascript" src="node_modules/angular-vimeo-api-factory/dist/angular-vimeo-api-factory.min.js"></script>
+        <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="application/javascript" src="js/app.js"></script>
     </head>
     <body>
@@ -37,9 +39,21 @@
             
             <div ng-controller="vimeoController">
                 <div class="col-md-12 no-padding">
+                    <div class="embed-responsive embed-responsive-16by9 mainVimeoVideo">
+                        <iframe class="vimeo" id="player1" src="{{getMainVimeoVideo()}}" width="1920" height="1080" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div ng-controller="vimeoController">
+                <div class="col-md-8 col-md-offset-2">
                     <div ng-repeat="p in vimeoFeed">
-                        <div class="embed-responsive embed-responsive-16by9" ng-class="{titleVimeoVideo:$first}">
-                            <iframe src="{{getIframeSrc(p.uri)}}" width="1920" height="1080" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe src="{{getIframeSrc(p.uri)}}" width="1920" height="1080" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
