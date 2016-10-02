@@ -38,29 +38,77 @@ body, html {
   text-align: justify; }
 
 .main {
-  background-image: url("../img/backgrounds/bomb.png");
-  min-height: 100%; }
-
-.sponsors {
-  background-image: url("../img/backgrounds/station.png");
-  min-height: 400px;
-  background-color: transparent;
-  font-size: 25px;
-  color: #f7f7f7; }
-
-.latest {
-  background-image: url("../img/backgrounds/auto.png");
-  min-height: 400px;
-  max-height: 875px;
   background-color: transparent;
   font-size: 25px;
   color: #f7f7f7;
   overflow: hidden; }
+  .main .container {
+    margin-top: -100%;
+    min-height: 100%; }
+  .main .background-image {
+    background-image: url("../img/backgrounds/bomb.png");
+    min-height: 100%;
+    opacity: 0.65;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.sponsors {
+  background-color: transparent;
+  font-size: 25px;
+  color: #f7f7f7;
+  overflow: hidden; }
+  .sponsors .container {
+    margin-top: -25rem;
+    min-height: 25rem; }
+  .sponsors .background-image {
+    background-image: url("../img/backgrounds/station.png");
+    min-height: 25rem;
+    opacity: 0.65;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.latest {
+  max-height: 55rem;
+  background-color: transparent;
+  font-size: 25px;
+  color: #f7f7f7;
+  overflow: hidden; }
+  .latest .container {
+    margin-top: -55rem;
+    min-height: 55rem; }
+  .latest .background-image {
+    background-image: url("../img/backgrounds/auto.png");
+    min-height: 55rem;
+    opacity: 0.65;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 .videos {
-  background-image: url("../img/backgrounds/bomb.png");
-  min-height: 400px;
-  position: relative; }
+  background-color: transparent;
+  font-size: 25px;
+  color: #f7f7f7;
+  overflow: hidden; }
+  .videos .container {
+    margin-top: -65rem;
+    min-height: 65rem; }
+  .videos .background-image {
+    background-image: url("../img/backgrounds/bomb.png");
+    min-height: 65rem;
+    opacity: 0.65;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 .main, .sponsors, .latest, .videos {
   position: relative;

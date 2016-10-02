@@ -40,13 +40,30 @@ text-align:center;
 
 
 // PARALAX
-.section {
-//    padding: 8rem 0 7rem;
-//    text-align: center;
-
+@mixin background-image($url, $min-height){
+    background-color:transparent;
+    font-size:25px;
+    color: #f7f7f7;
     
+    overflow: hidden;
+    
+    & .container {
+        margin-top: -1 * $min-height;
+        min-height: $min-height;
+    }
+    
+    & .background-image {
+        background-image: url($url);
+        min-height: $min-height;
+        opacity: 0.65;
+        position: relative;
+        //    opacity: 0.65;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
-
 .crew {
     color: #777;
     background-color:white;
@@ -54,37 +71,19 @@ text-align:center;
     padding:50px 80px;
     text-align: justify;
 }
-
+// classes with background-image
 .main {
-    background-image: url("../img/backgrounds/bomb.png");
-    min-height: 100%;
+    @include background-image("../img/backgrounds/bomb.png", 100%);
 }
-
 .sponsors {
-    background-image: url("../img/backgrounds/station.png");
-    min-height: 400px;
-
-    background-color:transparent;
-    font-size:25px;
-    color: #f7f7f7;
+    @include background-image("../img/backgrounds/station.png", 25rem);
 }
-
 .latest {
-    background-image: url("../img/backgrounds/auto.png");
-    min-height: 400px;
-    max-height: 875px;
-    
-    background-color:transparent;
-    font-size:25px;
-    color: #f7f7f7;
-    
-    overflow: hidden;
+    max-height: 55rem;
+    @include background-image("../img/backgrounds/auto.png", 55rem);
 }
-.videos {
-    background-image: url("../img/backgrounds/bomb.png");
-    min-height: 400px;
-    
-    position: relative;
+.videos {    
+    @include background-image("../img/backgrounds/bomb.png", 65rem);
 }
 .main, .sponsors, .latest, .videos {
     position: relative;

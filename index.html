@@ -40,7 +40,8 @@
     <body>    
         
         
-        <div class="main-video main" id="mainVimeoVideoContainer" ng-controller="vimeoController">
+        <div class="main main-video" id="mainVimeoVideoContainer" ng-controller="vimeoController">
+            <div class="background-image"></div>
             <iframe id="mainVimeoVideo" ng-src="{{getMainVimeoVideo(p.uri)}}" width="1600" height="900" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         
@@ -66,6 +67,7 @@
         
         
         <div class="sponsors">
+            <div class="background-image"></div>
             <div class="container">
                 <div class="caption">
                     <span class="border" style="">SPONSORS</span>
@@ -104,6 +106,7 @@
         
         
         <div class="latest">
+            <div class="background-image"></div>
             <div class="container">
                 <div class="caption">
                     <span class="border">LATEST</span>
@@ -127,10 +130,11 @@
         </div>
 
         <div class="videos" ng-controller="vimeoController">
-            <div class="caption">
-                <span class="border">VIDEOS</span>
-            </div>
+            <div class="background-image"></div>
             <div class="container">
+                <div class="caption">
+                    <span class="border">VIDEOS</span>
+                </div>
                 <div class="row">
                     <div ng-repeat="p in vimeoFeed">
                         <div class="one-half column responsive-video" style="padding-bottom: 27.25%;">
