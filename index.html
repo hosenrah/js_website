@@ -1,47 +1,64 @@
+<!DOCTYPE html>
 <html ng-app="js_website">
     <head>
+        
+        <!-- Basic Page Needs
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8">
         <title>Just-Shred | Crew</title>
+        <meta name="description" content="">
         <meta name="author" content="Andreas Rau">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        
-        <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+        <!-- Mobile Specific Metas
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- FONT
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+        <!-- CSS
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
         <link rel="stylesheet" href="css/main.css"/>
+
+
+        <!-- Favicon
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="icon" type="image/png" href="images/favicon.png">
         
-        <script type="application/javascript" src="node_modules/angular/angular.min.js"></script>
-        <script type="application/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
-        <script type="application/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
-        <script type="application/javascript" src="node_modules/angular-vimeo-api-factory/dist/angular-vimeo-api-factory.min.js"></script>
-        <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-<!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
-        <script type="application/javascript" src="js/app.js"></script>
     </head>
     <body>
         
+        
+        <header>
+        </header>
+        
+        <div class="section" ng-controller="vimeoController">
+<!--            <div class="container">-->
+                 <div class="main-video">
+                    <iframe id="mainVimeoVideo" ng-src="{{getMainVimeoVideo(p.uri)}}" width="1600" height="900" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+<!--            </div>-->
+        </div>
+        
+        
+        <footer>
+        </footer>
+        
         <div class="container-full">
+<!--
             <div>
                 <img class="background-image" src="img/backgrounds/val_canis.JPG">
             </div>
+-->
             
-            <div ng-controller="vimeoController">
-                <div class="mainVideo">
-                    <iframe class="mainVimeoVideo" id="mainVimeoVideo" src="{{getMainVimeoVideo()}}" width="1280" height="720" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016"></iframe>
-                </div>
-            </div>
             
-            <div ng-controller="vimeoController">
-                <div class="col-sm-12 col-md-8 col-md-offset-2">
-                    <div ng-repeat="p in vimeoFeed">
-                        <div class="col-md-6">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe src="{{getIframeSrc(p.uri)}}" width="1920" height="1080" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
+            <div ng-repeat="p in vimeoFeed">
+                    <iframe class="u-full-width u-max-full-width" ng-src="{{getVimeoVideos(p.uri)}}" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
-            </div>
+            
             
             <div>
                 <div class="col-md-12 no-padding">
@@ -65,6 +82,13 @@
             </div>
         </div>
         
+        <script type="application/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="application/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+        <script type="application/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
+        <script type="application/javascript" src="node_modules/angular-vimeo-api-factory/dist/angular-vimeo-api-factory.min.js"></script>
+        <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="application/javascript" src="js/app.js"></script>
             
     </body>
 </html>
