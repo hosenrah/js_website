@@ -7,26 +7,6 @@ body, html {
   min-width: 480px;
   width: auto !important; }
 
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  position: relative;
-  opacity: 0.65;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-
-.bgimg-1 {
-  background-image: url("../img/backgrounds/andy_tuk.jpg");
-  min-height: 100%; }
-
-.bgimg-2 {
-  background-image: url("../img/backgrounds/maggia.JPG");
-  min-height: 400px; }
-
-.bgimg-3 {
-  background-image: url("../img/backgrounds/val_canis.JPG");
-  min-height: 400px; }
-
 .caption {
   left: 0;
   width: 100%;
@@ -41,30 +21,53 @@ body, html {
   font-size: 25px;
   letter-spacing: 10px; }
 
-h3 {
-  text-align: center;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111; }
-
-.section {
-  padding: 8rem 0 7rem;
-  text-align: center; }
-  .section.crew {
-    color: #777;
-    background-color: white;
+.spacer {
+  position: relative; }
+  .spacer div {
+    color: #ddd;
+    background-color: #282E34;
     text-align: center;
-    padding: 50px 80px;
+    padding: 110px 80px;
     text-align: justify; }
-  .section.sponsors {
-    background-color: transparent;
-    font-size: 25px;
-    color: #f7f7f7; }
-  .section.latest {
-    background-color: transparent;
-    font-size: 25px;
-    color: #f7f7f7; }
+
+.crew {
+  color: #777;
+  background-color: white;
+  text-align: center;
+  padding: 50px 80px;
+  text-align: justify; }
+
+.main {
+  background-image: url("../img/backgrounds/bomb.png");
+  min-height: 100%; }
+
+.sponsors {
+  background-image: url("../img/backgrounds/station.png");
+  min-height: 400px;
+  background-color: transparent;
+  font-size: 25px;
+  color: #f7f7f7; }
+
+.latest {
+  background-image: url("../img/backgrounds/auto.png");
+  min-height: 400px;
+  max-height: 875px;
+  background-color: transparent;
+  font-size: 25px;
+  color: #f7f7f7;
+  overflow: hidden; }
+
+.videos {
+  background-image: url("../img/backgrounds/bomb.png");
+  min-height: 400px;
+  position: relative; }
+
+.main, .sponsors, .latest, .videos {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 /* Bigger than 750 */
 @media screen and (min-width: 750px) {
@@ -100,6 +103,11 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover; }
 
+.filter-brightness {
+  filter: brightness(50%); }
+  .filter-brightness:hover {
+    filter: brightness(100%); }
+
 .responsive-video {
   position: relative;
   padding-bottom: 56.25%;
@@ -107,12 +115,51 @@ h3 {
   padding-top: 0px;
   height: 0;
   overflow: hidden; }
-  .responsive-videoiframe {
+  .responsive-video iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
+
+.main-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* Default for 1600x900 videos 16:9 ratio*/
+  padding-top: 0px;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 0px; }
+  .main-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  @media screen and (max-width: 1366px) {
+    .main-video {
+      padding-bottom: 56.25%;
+      /* Default for 1600x900 videos 16:9 ratio*/ } }
+  @media screen and (min-width: 1024px) {
+    .main-video iframe {
+      width: 110%;
+      height: 110%;
+      margin-top: -2%; } }
+  .main-video:after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../img/js_logo/js_logo_white.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s; }
+    @media screen and (max-width: 960px) {
+      .main-video:after {
+        background-size: contain; } }
 
 .date {
   position: absolute;
@@ -141,68 +188,3 @@ h3 {
   vertical-align: middle;
   background: #1c1c26;
   white-space: nowrap; }
-
-.main-video {
-  position: relative;
-  padding-top: 0px;
-  height: 0;
-  overflow: hidden; }
-  @media screen and (max-width: 1366px) {
-    .main-video {
-      padding-bottom: 56.25%;
-      /* Default for 1600x900 videos 16:9 ratio*/ } }
-  .main-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-    @media screen and (min-width: 1024px) {
-      .main-video iframe {
-        width: 110%;
-        height: 110%;
-        margin-top: -2%; } }
-  .main-video:after {
-    content: '\A';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url("../img/js_logo/js_logo_white.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s; }
-    @media screen and (max-width: 960px) {
-      .main-video:after {
-        background-size: contain; } }
-
-.container-full {
-  margin: 0 auto;
-  width: 100%; }
-
-.no-margin {
-  margin: 0; }
-
-.no-padding {
-  padding: 0; }
-
-.filter-brightness {
-  filter: brightness(50%); }
-  .filter-brightness:hover {
-    filter: brightness(100%); }
-
-.square-foldable-parent {
-  height: 33.33333%;
-  overflow: hidden; }
-
-.background-image {
-  position: fixed;
-  left: 0;
-  z-index: -1;
-  width: auto;
-  height: auto;
-  min-height: 100%;
-  min-width: 100%;
-  filter: opacity(40%); }

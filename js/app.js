@@ -30,7 +30,7 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
         access_token:"1bb5838a1c16bdab1e8eac3add1b6f2a"
     }).then(function(_data){
         $scope.vimeoFeedContainer = _data.data.data;
-        $scope.filterVimeoFeed();
+        $scope.filterVimeoFeedContainer();
     }).catch(function (_data) {
         //on error
     });
@@ -42,10 +42,8 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
         return $sce.trustAsHtml(vimeoIframe);
     };
     
-    $scope.filterVimeoFeed = function() {
-        
+    $scope.filterVimeoFeedContainer = function() {
         $scope.length = $scope.vimeoFeedContainer.length;
-        
         for(i = 0; i < $scope.length; i++) {
             if($scope.vimeoFeedContainer[i].link.includes('main')) {
                 $scope.mainVimeoVideo = $scope.vimeoFeedContainer[i].uri;
