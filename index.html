@@ -40,26 +40,29 @@
     <body>    
         
         
-        <div class="main main-video" id="mainVimeoVideoContainer" ng-controller="vimeoController">
+        <div class="main" id="mainVimeoVideoContainer" ng-controller="vimeoController">
             <div class="background-image"></div>
             <iframe id="mainVimeoVideo" ng-src="{{getMainVimeoVideo(p.uri)}}" width="1600" height="900" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         
         
         <div class="crew">
+            <div class="caption">
+                <span class="border">CREW</span>
+            </div>
             <div class="container" style="max-width: inherit;">
-                <div class="caption">
-                    <span class="border">CREW</span>
-                </div>
                 <div class="row">
-                    <div class="one-third column filter-brightness">
+                    <div class="one-third column overlay">
                         <img class="u-max-full-width filter-brightness" src="img/portraits/tobi.JPG">
+                        <div class="overlay-content"></div>
                     </div>
-                    <div class="one-third column filter-brightness">
+                    <div class="one-third column overlay">
                         <img class="u-max-full-width filter-brightness" src="img/portraits/benni.JPG">
+                        <div class="overlay-content"></div>
                     </div>
-                    <div class="one-third column filter-brightness">
+                    <div class="one-third column overlay">
                         <img class="u-max-full-width filter-brightness" src="img/portraits/andy.JPG">
+                        <div class="overlay-content"></div>
                     </div>
                 </div>
             </div>

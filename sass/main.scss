@@ -1,3 +1,5 @@
+@import 'partials/mixins';
+
 body, html {
   height: 100%;
   margin: 0;
@@ -16,6 +18,7 @@ text-align:center;
     text-align: center;
     color: #000;
     padding-bottom: 20px;
+    margin: 3rem 0px 4rem;
 }
 .caption span.border {
   background-color: #111;
@@ -26,7 +29,6 @@ text-align:center;
 }
 .spacer {
     position:relative;
-    
     & div {
         color:#ddd;
         background-color:#282E34;
@@ -35,156 +37,36 @@ text-align:center;
         text-align: justify;
     }
 }
-
-
-
-
-// PARALAX
-@mixin background-image($url, $min-height){
-    background-color:transparent;
-    font-size:25px;
-    color: #f7f7f7;
-    overflow: hidden;
-    max-height: $min-height;
-    
-    & .container {
-        margin-top: -1 * $min-height;
-        min-height: $min-height;
-    }
-    
-    & .background-image {
-        background-image: url($url);
-        min-height: $min-height;
-        opacity: 0.65;
-        position: relative;
-        //    opacity: 0.65;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+@mixin spacer($background-color){
+    position:relative;
+    & div {
+        color:#ddd;
+        background-color:$background-color;
+        text-align:center;
+        padding:110px 80px;
+        text-align: justify;
     }
 }
+.spacer {
+    @include spacer("#282E34");
+}
 .crew {
-    color: #777;
-    background-color:white;
-    text-align:center;
-    padding:50px 80px;
-    text-align: justify;
+    @include spacer("#white");
+    margin-bottom: 7rem;
+    & div {
+        padding:0;
+        text-align: center;
+    }
 }
 // classes with background-image
 .main {
     @include background-image("../img/backgrounds/bomb.png", 100%);
-}
-.sponsors {
-    @include background-image("../img/backgrounds/station.png", 25rem);
-}
-.latest {
-    @include background-image("../img/backgrounds/auto.png", 50rem);
-}
-.videos {    
-    @include background-image("../img/backgrounds/bomb.png", 65rem);
-}
-.main, .sponsors, .latest, .videos {
-    position: relative;
-    //    opacity: 0.65;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Bigger than 750 */
-@media screen and (min-width: 750px) {
-  .section {
-    padding: 14rem 0 15rem;
-  }
-}
-
-/* Bigger than 1000 */
-@media screen and (min-width: 1000px) {
-  .section {
-    padding: 20rem 0 19rem;
-  }
-}
-
-
-
-
-
-
-// IMAGES AND VIDEO
-@mixin square-no-margin($squaresPerRow, $margin) {
-    float:left;
-    position: relative;
-    width: (100% / $squaresPerRow) - ($margin * 2);
-    margin-left: $margin;
-    margin-right: $margin;
-    margin-bottom: $margin * 5;
-//    margin-bottom: $margin / 2;
-    padding-bottom : 30%;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover;
-}
-.square {
-    @include square-no-margin(3, 1.66%);
-}
-.rectangle {
-    @include square-no-margin(3, 0);
-}
-.filter-brightness {
-    filter: brightness(50%);
-    
-    &:hover {
-        filter: brightness(100%);
-    }
-}
-@mixin responsive-video(){
-    position: relative;
-    padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
-    padding-top: 0px;
-    height: 0;
-    overflow: hidden;
-    
-    & iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-@mixin js_logo(){
-    &:after {
-        content:'\A';
-        position:absolute;
-        width:100%; 
-        height:100%;
-        top:0; 
-        left:0;
-        background-image: url('../img/js_logo/js_logo_white.png');
-        background-position:center center;
-        background-repeat:no-repeat;
-        transition: all 0.5s;
-        -webkit-transition: all 0.5s;
-        
-        @media screen and (max-width: "960px") {
-            background-size:contain;
-        }
-    }
-}
-.responsive-video{
-    @include responsive-video();
-}
-.main-video {
     @include responsive-video;
     padding-bottom: 0px;
-    
     // change max width also in code!
     @media screen and (max-width: "1366px") {
         padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
     }
-    
     iframe {
         @media screen and (min-width: "1024px") {
             width: 110%;
@@ -192,14 +74,66 @@ text-align:center;
             margin-top: -2%;
         }
     }
-    
     @include js_logo;
 }
+.sponsors {
+    @include background-image("../img/backgrounds/station.png", 30rem);
+}
+.latest {
+    @include background-image("../img/backgrounds/auto.png", 58rem);
+}
+.videos {    
+    @include background-image("../img/backgrounds/bomb.png", 66rem);
+}
+.square {
+    @include square-no-margin(3, 1.66%);
+}
+.overlay {
+    position: relative;
+    & .overlay-content {
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        height: 0;
+        width: 0;
+        color: white;
+        background: url(../img/overlay/overlay.png); 
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-font-smoothing: antialiased;
+    }
+    &:hover {
+        & .overlay-content {
+            left: 3%;
+            height: 91%;
+            width: 94%;
+            opacity: 1;
+            text-align: center;
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-51%);
+        }
+    }
+}
 
-
-
-
-
+.responsive-video{
+    @include responsive-video();
+}
 // DATE AND MONTH
 .date {
     position: absolute;
@@ -209,7 +143,6 @@ text-align:center;
     transform-origin: top right;
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    font-family: proxima-nova,sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
