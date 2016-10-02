@@ -60,7 +60,7 @@ text-align:center;
 }
 // classes with background-image
 .main {
-    @include background-image("../img/backgrounds/bomb.png", 100%);
+    @include background-image("../img/backgrounds/bomb.jpg", 100%);
     @include responsive-video;
     padding-bottom: 0px;
     // change max width also in code!
@@ -77,13 +77,13 @@ text-align:center;
     @include js_logo;
 }
 .sponsors {
-    @include background-image("../img/backgrounds/station.png", 30rem);
+    @include background-image("../img/backgrounds/station.jpg", 30rem);
 }
 .latest {
-    @include background-image("../img/backgrounds/auto.png", 58rem);
+    @include background-image("../img/backgrounds/auto.jpg", 58rem);
 }
 .videos {    
-    @include background-image("../img/backgrounds/bomb.png", 66rem);
+    @include background-image("../img/backgrounds/bomb.jpg", 66rem);
 }
 .square {
     @include square-no-margin(3, 1.66%);

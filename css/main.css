@@ -75,7 +75,7 @@ body, html {
     margin-top: -100%;
     min-height: 100%; }
   .main .background-image {
-    background-image: url("../img/backgrounds/bomb.png");
+    background-image: url("../img/backgrounds/bomb.jpg");
     min-height: 100%;
     opacity: 0.65;
     position: relative;
@@ -129,7 +129,7 @@ body, html {
     margin-top: -30rem;
     min-height: 30rem; }
   .sponsors .background-image {
-    background-image: url("../img/backgrounds/station.png");
+    background-image: url("../img/backgrounds/station.jpg");
     min-height: 30rem;
     opacity: 0.65;
     position: relative;
@@ -153,7 +153,7 @@ body, html {
     margin-top: -58rem;
     min-height: 58rem; }
   .latest .background-image {
-    background-image: url("../img/backgrounds/auto.png");
+    background-image: url("../img/backgrounds/auto.jpg");
     min-height: 58rem;
     opacity: 0.65;
     position: relative;
@@ -177,7 +177,7 @@ body, html {
     margin-top: -66rem;
     min-height: 66rem; }
   .videos .background-image {
-    background-image: url("../img/backgrounds/bomb.png");
+    background-image: url("../img/backgrounds/bomb.jpg");
     min-height: 66rem;
     opacity: 0.65;
     position: relative;
