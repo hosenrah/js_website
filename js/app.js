@@ -71,11 +71,15 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
     
 //    have a look at https://github.com/vimeo/player.js
     jQuery(document).ready(function() {
-       
+        // set main video height equals to screen height on desktop devices, CHANGE ALSO IN CSS!
+        var mainVimeoVideoContainer = $('#mainVimeoVideoContainer');
         var mainVimeoVideoIframe = document.getElementById('mainVimeoVideo');
-        
-        Froogaloop(mainVimeoVideoIframe).addEvent('ready', ready);
+        if($(window).width() >= 1366) {
+            mainVimeoVideoContainer.height($(window).height());
 
+        }
+        // auto play of main video
+        Froogaloop(mainVimeoVideoIframe).addEvent('ready', ready);
         function ready(playerID){
             Froogaloop(playerID).api('setVolume', 0);
             Froogaloop(playerID).api("play");

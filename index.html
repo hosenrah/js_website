@@ -35,13 +35,19 @@
         <header>
         </header>
         
-        <div class="section" ng-controller="vimeoController">
-<!--            <div class="container">-->
-                 <div class="main-video">
-                    <iframe id="mainVimeoVideo" ng-src="{{getMainVimeoVideo(p.uri)}}" width="1600" height="900" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-<!--            </div>-->
+         <div id="mainVimeoVideoContainer" class="main-video" ng-controller="vimeoController">
+            <iframe id="mainVimeoVideo" ng-src="{{getMainVimeoVideo(p.uri)}}" width="1600" height="900" frameborder="0" title="#JUSTSHRED - Hintertux Season Opening 2016" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="four columns rectangle filter-brightness" style="background-image:url(img/portraits/tobi.JPG)"></div>
+                    <div class="four columns rectangle filter-brightness" style="background-image:url(img/portraits/benni.JPG)"></div>
+                    <div class="four columns rectangle filter-brightness" style="background-image:url(img/portraits/andy.JPG)"></div>
+                </div>
+            </div>
+        </div>
+        
         
         
         <footer>
@@ -62,9 +68,7 @@
             
             <div>
                 <div class="col-md-12 no-padding">
-                    <div class="rectangle filter-brightness" style="background-image:url(img/portraits/tobi.JPG)"></div>
-                    <div class="rectangle filter-brightness" style="background-image:url(img/portraits/benni.JPG)"></div>
-                    <div class="rectangle filter-brightness" style="background-image:url(img/portraits/andy.JPG)"></div>
+                    
                 </div>
             </div>
 

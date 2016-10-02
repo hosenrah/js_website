@@ -74,17 +74,24 @@ body {
 
 .main-video {
   position: relative;
-  padding-bottom: 56.25%;
-  /* Default for 1600x900 videos 16:9 ratio*/
   padding-top: 0px;
   height: 0;
   overflow: hidden; }
+  @media screen and (max-width: 1366px) {
+    .main-video {
+      padding-bottom: 56.25%;
+      /* Default for 1600x900 videos 16:9 ratio*/ } }
   .main-video iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
+    @media screen and (min-width: 1024px) {
+      .main-video iframe {
+        width: 110%;
+        height: 110%;
+        margin-top: -2%; } }
   .main-video:after {
     content: '\A';
     position: absolute;
