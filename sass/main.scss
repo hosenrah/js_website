@@ -44,8 +44,8 @@ text-align:center;
     background-color:transparent;
     font-size:25px;
     color: #f7f7f7;
-    
     overflow: hidden;
+    max-height: $min-height;
     
     & .container {
         margin-top: -1 * $min-height;
@@ -79,8 +79,7 @@ text-align:center;
     @include background-image("../img/backgrounds/station.png", 25rem);
 }
 .latest {
-    max-height: 55rem;
-    @include background-image("../img/backgrounds/auto.png", 55rem);
+    @include background-image("../img/backgrounds/auto.png", 50rem);
 }
 .videos {    
     @include background-image("../img/backgrounds/bomb.png", 65rem);
@@ -120,7 +119,7 @@ text-align:center;
     width: (100% / $squaresPerRow) - ($margin * 2);
     margin-left: $margin;
     margin-right: $margin;
-    margin-top: $margin * 5;
+    margin-bottom: $margin * 5;
 //    margin-bottom: $margin / 2;
     padding-bottom : 30%;
     background-position:center center;
