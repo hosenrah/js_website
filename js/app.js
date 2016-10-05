@@ -12,6 +12,15 @@ js_website.controller('instagramController', ['$scope', '$resource', function($s
     
     $scope.instagramFeed = $scope.instagramAPI.get();
     
+//    $.each($scope.instagramFeed, function(index, value) {
+//        console.log(value);
+//    });
+    
+    $scope.filterInstagramPosts = function(post) {
+//        console.log(post);
+        return post.images.standard_resolution.url;
+    }
+    
     $scope.convertToDate = function(dt) { 
       
         return new Date(dt * 1000);

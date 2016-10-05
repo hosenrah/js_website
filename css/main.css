@@ -18,9 +18,10 @@ body, html {
 .caption span.border {
   background-color: #111;
   color: #fff;
-  padding: 18px;
+  padding: 1rem;
   font-size: 25px;
-  letter-spacing: 10px; }
+  letter-spacing: 10px;
+  position: relative; }
 
 .spacer {
   position: relative; }
@@ -276,3 +277,16 @@ body, html {
   vertical-align: middle;
   background: #1c1c26;
   white-space: nowrap; }
+
+.coach-timo {
+  width: 15rem;
+  height: auto;
+  position: absolute;
+  top: -5.0rem;
+  left: 0rem; }
+  .coach-timo.text {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    color: black;
+    padding-top: 2rem;
+    padding-left: 2rem; }
