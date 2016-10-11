@@ -81,24 +81,36 @@
                 </div>
                 <div class="row">
                     <div class="one-third column">
-                        <img class="u-max-full-width" src="img/sponsors/Madrid.png">
+                        <a href="http://madridskateboards.com/" target="_blank">
+                            <img class="u-max-full-width" src="img/sponsors/Madrid.png">
+                        </a>
                     </div>
                     <div class="one-third column">
-                        <img class="u-max-full-width" src="img/sponsors/Ichthys.png">
+                        <a href="http://www.talk-about.org/leben-ist-mehr/" target="_blank">
+                            <img class="u-max-full-width" src="img/sponsors/Ichthys.png">
+                        </a>
                     </div>
                     <div class="one-third column">
-                        <img class="u-max-full-width" src="img/sponsors/Nitro.png">
+                        <a href="http://nitrousa.com/de" target="_blank">
+                            <img class="u-max-full-width" src="img/sponsors/Nitro.png">
+                        </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="one-third column">
-                        <img class="u-max-full-width" src="img/sponsors/Arbor.png">
+                        <a href="http://arborcollective.com/" target="_blank">
+                            <img class="u-max-full-width" src="img/sponsors/Arbor.png">
+                        </a>
                     </div>
                     <div class="one-third column">
-                        <img class="u-max-full-width" src="img/sponsors/SportMueller.png">
+                        <a href="http://www.sport-mueller.de/" target="_blank">
+                            <img class="u-max-full-width" src="img/sponsors/SportMueller.png">
+                        </a>
                     </div>
                     <div class="one-third column">
-                        <img class="u-max-full-width" src="img/sponsors/LeCannabis.png">
+                        <a href="http://www.lecannabis.com/de/" target="_blank">
+                            <img class="u-max-full-width" src="img/sponsors/LeCannabis.png">
+                        </a>
                     </div>
                 </div>
                 
@@ -120,12 +132,14 @@
                 </div>
                 <div class="row" ng-controller="instagramController">
                     <div ng-repeat="p in instagramFeed">
-                        <div class="square" ng-style="{'background-image':'url({{filterInstagramPosts(p)}})'}">
-                            <div class="date">
-                                <span class="month">{{convertToDate(p.caption.created_time) | date: "MMM"}}</span>
-                                <span >{{convertToDate(p.caption.created_time) | date: "d"}}</span>
+                        <a href="{{p.link}}" target="_blank">
+                            <div class="square" ng-style="{'background-image':'url({{filterInstagramPosts(p)}})'}">
+                                <div class="date">
+                                    <span class="month">{{convertToDate(p.caption.created_time) | date: "MMM"}}</span>
+                                    <span >{{convertToDate(p.caption.created_time) | date: "d"}}</span>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

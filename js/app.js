@@ -12,6 +12,7 @@ js_website.controller('instagramController', ['$scope', '$resource', function($s
     
     $scope.instagramAPI.get().$promise.then(function(data) {
             $scope.filterInstaFeeds(data);
+//            console.log(data);
         }, function(error) {
             // error handler
         });
@@ -26,7 +27,7 @@ js_website.controller('instagramController', ['$scope', '$resource', function($s
     
     $scope.resizeInstaFeedBackground = function(instaFeedLength) {
         //         resize background image to fit insta feed
-        minHeight = Math.ceil(instaFeedLength / 3) * 25 + 10.3;
+        minHeight = Math.ceil(instaFeedLength / 3) * 30 + 10.3;
         $('#latestBackgroundImage').css('min-height', minHeight + 'rem');
     };
     
