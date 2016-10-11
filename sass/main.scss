@@ -17,7 +17,7 @@ text-align:center;
     width: 100%;
     text-align: center;
     color: #000;
-    padding-bottom: 20px;
+    padding-bottom: 1.3rem;
     margin: 3rem 0px 4rem;
 }
 .caption span.border {
@@ -70,15 +70,18 @@ text-align:center;
     }
     iframe {
         @media screen and (min-width: "1024px") {
-            width: 110%;
-            height: 110%;
-            margin-top: -2%;
+            width: 115%;
+            height: 115%;
+            margin-top: -7.5%;
+            left: -7.5%;
         }
     }
     @include js_logo;
 }
 .sponsors {
     @include background-image("../img/backgrounds/station.jpg", 30rem);
+    height: 30rem;
+    min-height: 0;
 }
 .latest {
     @include background-image("../img/backgrounds/auto.jpg", 58rem);

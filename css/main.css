@@ -12,7 +12,7 @@ body, html {
   width: 100%;
   text-align: center;
   color: #000;
-  padding-bottom: 20px;
+  padding-bottom: 1.3rem;
   margin: 3rem 0px 4rem; }
 
 .caption span.border {
@@ -58,8 +58,8 @@ body, html {
   background-color: transparent;
   font-size: 25px;
   color: #f7f7f7;
-  overflow: hidden;
-  height: 100%;
+  overflow: auto;
+  min-height: 100%;
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -73,8 +73,11 @@ body, html {
   overflow: hidden;
   padding-bottom: 0px; }
   .main .container {
-    margin-top: -100%;
-    min-height: 100%; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block; }
   .main .background-image {
     background-image: url("../img/backgrounds/bomb.jpg");
     min-height: 100%;
@@ -87,7 +90,7 @@ body, html {
   .main iframe {
     position: absolute;
     top: 0;
-    left: -4%;
+    left: 0;
     width: 100%;
     height: 100%; }
   @media screen and (max-width: 1366px) {
@@ -96,9 +99,10 @@ body, html {
       /* Default for 1600x900 videos 16:9 ratio*/ } }
   @media screen and (min-width: 1024px) {
     .main iframe {
-      width: 110%;
-      height: 110%;
-      margin-top: -2%; } }
+      width: 115%;
+      height: 115%;
+      margin-top: -7.5%;
+      left: -7.5%; } }
   .main:after {
     content: '\A';
     position: absolute;
@@ -119,16 +123,21 @@ body, html {
   background-color: transparent;
   font-size: 25px;
   color: #f7f7f7;
-  overflow: hidden;
-  height: 30rem;
+  overflow: auto;
+  min-height: 100%;
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  height: 30rem;
+  min-height: 0; }
   .sponsors .container {
-    margin-top: -30rem;
-    min-height: 30rem; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block; }
   .sponsors .background-image {
     background-image: url("../img/backgrounds/station.jpg");
     min-height: 30rem;
@@ -143,16 +152,19 @@ body, html {
   background-color: transparent;
   font-size: 25px;
   color: #f7f7f7;
-  overflow: hidden;
-  height: 58rem;
+  overflow: auto;
+  min-height: 100%;
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
   .latest .container {
-    margin-top: -58rem;
-    min-height: 58rem; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block; }
   .latest .background-image {
     background-image: url("../img/backgrounds/auto.jpg");
     min-height: 58rem;
@@ -167,16 +179,19 @@ body, html {
   background-color: transparent;
   font-size: 25px;
   color: #f7f7f7;
-  overflow: hidden;
-  height: 72rem;
+  overflow: auto;
+  min-height: 100%;
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
   .videos .container {
-    margin-top: -72rem;
-    min-height: 72rem; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block; }
   .videos .background-image {
     background-image: url("../img/backgrounds/bomb.jpg");
     min-height: 72rem;
@@ -247,7 +262,7 @@ body, html {
   .responsive-video iframe {
     position: absolute;
     top: 0;
-    left: -4%;
+    left: 0;
     width: 100%;
     height: 100%; }
 

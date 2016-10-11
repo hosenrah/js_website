@@ -22,7 +22,7 @@
     & iframe {
         position: absolute;
         top: 0;
-        left: -4%;
+        left: 0;
         width: 100%;
         height: 100%;
     }
@@ -50,8 +50,8 @@
     background-color:transparent;
     font-size:25px;
     color: #f7f7f7;
-    overflow: hidden;
-    height: $min-height;
+    overflow: auto;
+    min-height: 100%;
     
     position: relative;
     background-attachment: fixed;
@@ -59,8 +59,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     & .container {
-        margin-top: -1 * $min-height;
-        min-height: $min-height;
+//        margin-top: -1 * $min-height;
+//        min-height: $min-height;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
     }
     & .background-image {
         background-image: url($url);
