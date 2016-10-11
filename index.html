@@ -136,13 +136,13 @@
           </div>
         </div>
 
-        <div class="videos" ng-controller="vimeoController">
+        <div class="videos">
             <div class="background-image"></div>
             <div class="container">
                 <div class="caption">
                     <span class="border">VIDEOS</span>
                 </div>
-                <div class="row">
+                <div class="row" ng-controller="vimeoController">
                     <div ng-repeat="p in vimeoFeed">
                         <div class="one-half column responsive-video" style="padding-bottom: 27.25%; margin-right: 2%; margin-bottom: 5%">
                             <iframe ng-src="{{getVimeoVideos(p.uri)}}" width="1600" height="900" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

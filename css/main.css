@@ -168,18 +168,18 @@ body, html {
   font-size: 25px;
   color: #f7f7f7;
   overflow: hidden;
-  height: 66rem;
+  height: 72rem;
   position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
   .videos .container {
-    margin-top: -66rem;
-    min-height: 66rem; }
+    margin-top: -72rem;
+    min-height: 72rem; }
   .videos .background-image {
     background-image: url("../img/backgrounds/bomb.jpg");
-    min-height: 66rem;
+    min-height: 72rem;
     opacity: 0.65;
     position: relative;
     background-attachment: fixed;

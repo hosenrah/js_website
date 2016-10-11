@@ -84,7 +84,7 @@ text-align:center;
     @include background-image("../img/backgrounds/auto.jpg", 58rem);
 }
 .videos {    
-    @include background-image("../img/backgrounds/bomb.jpg", 66rem);
+    @include background-image("../img/backgrounds/bomb.jpg", 72rem);
 }
 .square {
     @include square-no-margin(3, 1.66%);
