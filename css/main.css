@@ -59,7 +59,7 @@ body, html {
   font-size: 25px;
   color: #f7f7f7;
   overflow: hidden;
-  max-height: 100%;
+  height: 100%;
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -87,7 +87,7 @@ body, html {
   .main iframe {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -4%;
     width: 100%;
     height: 100%; }
   @media screen and (max-width: 1366px) {
@@ -120,7 +120,7 @@ body, html {
   font-size: 25px;
   color: #f7f7f7;
   overflow: hidden;
-  max-height: 30rem;
+  height: 30rem;
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -144,7 +144,7 @@ body, html {
   font-size: 25px;
   color: #f7f7f7;
   overflow: hidden;
-  max-height: 58rem;
+  height: 58rem;
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -168,7 +168,7 @@ body, html {
   font-size: 25px;
   color: #f7f7f7;
   overflow: hidden;
-  max-height: 66rem;
+  height: 66rem;
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -247,7 +247,7 @@ body, html {
   .responsive-video iframe {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -4%;
     width: 100%;
     height: 100%; }
 
