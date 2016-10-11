@@ -119,7 +119,7 @@
                     <span class="border">LATEST</span>
                 </div>
                 <div class="row" ng-controller="instagramController">
-                    <div ng-repeat="p in instagramFeed.data">
+                    <div ng-repeat="p in instagramFeed">
                         <div class="square" ng-style="{'background-image':'url({{filterInstagramPosts(p)}})'}">
                             <div class="date">
                                 <span class="month">{{convertToDate(p.caption.created_time) | date: "MMM"}}</span>

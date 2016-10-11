@@ -10,7 +10,14 @@ js_website.controller('instagramController', ['$scope', '$resource', function($s
     
     $scope.instagramAPI = $resource("https://api.instagram.com/v1/users/self/media/recent/?access_token=2235700352.4ee6f6e.b902f5c21acc4655a71b7043b21cdcfc", { callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
     
-    $scope.instagramFeed = $scope.instagramAPI.get();
+    $scope.instagramAPI.get().$promise.then(function(data) {
+            // success handler
+            $scope.instagramFeed = JSON.parse(JSON.stringify(data.data));
+            $scope.instagramFeed.length = 6; 
+            console.log($scope.instagramFeed);
+        }, function(error) {
+            // error handler
+        });
     
 //    $.each($scope.instagramFeed, function(index, value) {
 //        console.log(value);
