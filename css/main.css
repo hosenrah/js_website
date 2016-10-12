@@ -202,6 +202,35 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover; }
 
+.tutorial {
+  background-color: transparent;
+  font-size: 25px;
+  color: #f7f7f7;
+  overflow: auto;
+  min-height: 100%;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 53rem;
+  min-height: 0; }
+  .tutorial .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block; }
+  .tutorial .background-image {
+    background-image: url("../img/backgrounds/shop.jpg");
+    min-height: 53rem;
+    opacity: 0.65;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
 .square {
   float: left;
   position: relative;

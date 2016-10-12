@@ -89,6 +89,11 @@ text-align:center;
 .videos {    
     @include background-image("../img/backgrounds/bomb.jpg", 72rem);
 }
+.tutorial {    
+    @include background-image("../img/backgrounds/shop.jpg", 53rem);
+    height: 53rem;
+    min-height: 0;
+}
 .square {
     @include square-no-margin(3, 1.66%);
 }

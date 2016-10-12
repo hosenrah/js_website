@@ -46,6 +46,7 @@ js_website.controller('instagramController', ['$scope', '$resource', function($s
 
 js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoFactory', function($scope, $resource, $sce, vimeoFactory) {
     $scope.vimeoFeed = [];
+    $scope.vimeoFeedTutorial = [];
     
     $scope.mainVimeoVideo;
     
@@ -75,8 +76,12 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
             if($scope.vimeoFeedContainer[i].name.charAt(0) === "#") {
                 $scope.vimeoFeed.push($scope.vimeoFeedContainer[i]);
             }
+            if($scope.vimeoFeedContainer[i].name.charAt(0) === "$") {
+                $scope.vimeoFeedTutorial.push($scope.vimeoFeedContainer[i]);
+            }
         }
         $scope.resizeVimeoFeedBackground($scope.vimeoFeed.length);
+        $scope.resizeVimeoTutorialFeedBackground($scope.vimeoFeedTutorial.length);
     };
     
     $scope.resizeVimeoFeedBackground = function(vimeoFeedLength) {
@@ -84,6 +89,14 @@ js_website.controller('vimeoController', ['$scope', '$resource', '$sce', 'vimeoF
         minHeight = Math.ceil(vimeoFeedLength / 2) * 21.5 + 10.3;
         $('#videoBackgroundImage').css('min-height', minHeight + 'rem');
     };
+    
+    $scope.resizeVimeoTutorialFeedBackground = function(vimeoTutorialFeedLength) {
+        //         resize background image to fit insta feed
+        minHeight = Math.ceil(vimeoTutorialFeedLength / 2) * 21.5 + 10.3;
+        $('#videoTutorialBackgroundImage').css('min-height', minHeight + 'rem');
+    };
+    
+    
     
     $scope.getMainVimeoVideo = function() {
         if($scope.mainVimeoVideo) {
