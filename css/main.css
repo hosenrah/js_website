@@ -269,6 +269,14 @@ body, html {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     -webkit-font-smoothing: antialiased; }
+    .overlay .overlay-content div {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      font-size: 25px;
+      letter-spacing: 10px; }
   .overlay:hover .overlay-content {
     left: 3%;
     height: 91%;
@@ -334,3 +342,38 @@ body, html {
     color: black;
     padding-top: 2rem;
     padding-left: 2rem; }
+
+.footer {
+  position: relative; }
+  .footer div {
+    color: #ddd;
+    background-color: #000;
+    text-align: center;
+    padding: 260px 80px;
+    text-align: justify;
+    text-align: center; }
+
+.footer-bottom {
+  background-color: #141217;
+  background-position: center 120px;
+  background-image: url(../img/footer/mountains.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff; }
+
+.social {
+  max-height: 100%;
+  vertical-align: bottom;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1rem; }
+  .social.just-shred {
+    background-image: url(../img/js_logo/js_logo_white_nav.png);
+    padding: 2rem 3rem 2rem 3rem; }
+  .social.instagram {
+    background-image: url(../img/social/instagramm.png); }
+  .social.facebook {
+    background-image: url(../img/social/fb.png); }
+  .social.vimeo {
+    background-image: url(../img/social/vimeo.png); }
